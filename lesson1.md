@@ -6,6 +6,12 @@
 2. How to pull, make changes, commit and push.
 3. Github pages
 
+## Sublime Text
+
+1. Install [package control](https://packagecontrol.io) (helps to install plugins easily)
+2. Install [Sidebar Enhancements](https://packagecontrol.io/packages/SideBarEnhancements)
+3. Install [Emmet](https://emmet.io)
+
 ## HTML
 
 1. HTML basic structure
@@ -45,8 +51,19 @@
 
 ## Your assignment
 
-1. Pick a website that you like and replicate one portion of it.
-2. Use the HTML tags you learned today (Bonus if more)
-3. Use the CSS Properties you learned today (Bonus if more)
-4. Strive for sensible HTML and CSS
-5. Submit assignment by Thursday night, 23:59. Through Github
+Homework 1: Build FEWD GA Banner
+
+<img src="images/homework1/ga-banner.png" alt="">
+
+2. Build GA FEWD List of subjects:
+
+<img src="images/homework1/ga-subject-list.png" alt="">
+
+**Notes for both assignment:**
+
+1. No need to make it 100% the same.
+2. Get a feel of using font-size, margin, padding, text-align and other properties we spoke about in class
+3. Focus on your HTML structure
+4. Use classes for CSS Selectors
+5. Submit assignment by Thursday night, 23:59 at this link:
+
