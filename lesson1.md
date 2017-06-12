@@ -65,5 +65,5 @@ Homework 1: Build FEWD GA Banner
 2. Get a feel of using font-size, margin, padding, text-align and other properties we spoke about in class
 3. Focus on your HTML structure
 4. Use classes for CSS Selectors
-5. Submit assignment by Thursday night, 23:59 at this link:
+5. Submit assignment by Thursday night, 23:59 at [this link](https://docs.google.com/a/generalassemb.ly/spreadsheets/d/1oeikgpbStGhOZ2irZRYPPdImgT64CZTh7LvQmTSaZLo/edit?usp=sharing)
 
