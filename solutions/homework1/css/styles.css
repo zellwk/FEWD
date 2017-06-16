@@ -1,0 +1,134 @@
+body {
+  margin: 0;
+  font-family: Helvetica, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, ul, ol, li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Buttons */
+.button {
+  padding: 15px 25px;
+  border-radius: 3px;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.15s ease-in-out;
+}
+
+.button--red {
+  background-color: #fa4542;
+  color: #fff;
+  box-shadow: 0 3px 0 0 #be0201;
+}
+
+.button--red:hover {
+  background-color: #f6201d;
+}
+
+.button--gray {
+  background-color: #c3c3c3;
+  color: #333;
+  box-shadow: 0 3px 0 0 #818181;
+}
+
+.button--gray:hover {
+  background-color: #dadada;
+}
+
+
+/* Hero section */
+.hero {
+  color: #fff;
+  padding-bottom: 60px;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('../images/cat.jpg');
+  background-size: cover;
+  background-position: center center;
+}
+
+.breadcrumbs {
+  padding: 15px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.075em;
+}
+
+.breadcrumbs a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.hero__content {
+  margin: 30px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.hero__content h1 {
+  font-size: 60px;
+  line-height: 1;
+  font-family: impact, sans-serif;
+}
+
+.hero__content p {
+  margin-top: 30px;
+}
+
+.hero__cta {
+  margin-top: 50px;
+  text-align: center;
+}
+
+
+/* Takeaways section */
+.takeaways {
+  padding: 50px;
+  background-color: #fbd334;
+}
+
+.wrap {
+  position: relative;
+  left: 150px;
+  width: 600px;
+  margin: auto;
+}
+
+h2 {
+  font-size: 60px;
+  font-family: impact, sans-serif;
+  text-transform: uppercase;
+}
+
+.takeaways__content {
+  margin-top: 30px;
+}
+
+.unit ul {
+  margin-top: 15px;
+  border-top: 1px solid black;
+}
+
+.unit li {
+  display: block;
+}
+
+.unit li + li {
+  border-top: 1px solid #f9c120;
+}
+
+.unit a {
+  display: block;
+  padding-top: 22px;
+  padding-bottom: 17px;
+  color: black;
+  text-decoration: none;
+  transition: transform 0.3s ease-out;
+}
+
+.unit a:hover {
+  transform: translateX(30px);
+}
