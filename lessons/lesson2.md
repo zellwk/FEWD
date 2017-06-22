@@ -16,7 +16,16 @@
   + absolute
   + fixed
 
-- Floats
+- display
+  + block
+  + inline-block
+  + inline
+  + table
+  + flex
+  + grid
+
+- Floats and float collapse
+
 - CSS Grid
   + Use firefox to debug
   + grid-template-columns
