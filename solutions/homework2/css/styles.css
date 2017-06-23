@@ -1,0 +1,84 @@
+body {
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6, ul, ol, li, p {
+  margin: 0;
+}
+
+h2 {
+  font-size: 29px;
+  font-weight: normal;
+  font-family: georgia;
+}
+
+/* wrap */
+.wrap {
+  width: 1140px;
+  margin: auto;
+}
+
+/* Title area */
+section > header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 30px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid black;
+  text-transform: uppercase;
+}
+
+section > header::before,
+section > header::after {
+  position: absolute;
+  right: 0;
+  left: 0;
+  display: block;
+  border-bottom: 1px solid black;
+  content: '';
+}
+
+section > header:before {
+  bottom: 1px;
+}
+
+section > header:after {
+  bottom: 3px;
+}
+
+.headlines__meta {
+  display: inline-block;
+  font-size: 13px;
+}
+
+.headlines__meta > * + * {
+  margin-left: 0.25em;
+  padding-left: 0.5em;
+  border-left: 1px solid black;
+}
+
+/* Grids area */
+.newsgrid {
+  display: grid;
+  grid-template-columns: repeat(4, 270px);
+  grid-template-rows: repeat(3, 300px);
+  grid-column-gap: 20px;
+  grid-row-gap: 15px;
+  margin: 10px auto;
+}
+
+.newsgrid > * {
+  background-color: #1ce;
+}
+
+.newsgrid__featured {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.newsgrid__breaking {
+  grid-column: 4;
+  grid-row: 1 / span 2;
+}
