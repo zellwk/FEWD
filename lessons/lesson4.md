@@ -1,4 +1,4 @@
-# What you learned in lesson 3
+# What you learned in lesson 4
 
 ## Responsive CSS
 
