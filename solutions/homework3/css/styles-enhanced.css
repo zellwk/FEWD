@@ -1,0 +1,562 @@
+body {
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  line-height: 1.5;
+  background-color: #ccc;
+}
+
+h1, h2, h3, h4, h5, h6, p, ol, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+/* This encloses images within your container's width */
+img {
+  max-width: 100%;
+}
+
+/* ======================================
+// # Typography
+// This represents all availiable font-sizes so you don't have no redefine. Normally, I would use this classes as 'mixins', which is an additional feature in a thing called Sass. But for now, you can use these classes in your HTML.
+// ====================================== */
+
+.t2 {
+  font-size: 14px;
+  font-weight: normal;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.t2 + * {
+  margin-top: 15px;
+}
+
+.s1 {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.s2 {
+  font-size: 12px;
+}
+
+.s3 {
+  font-size: 11px;
+}
+
+/* Wrap to align everything on the left and right */
+.l-wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+/* ======================================
+// # Tags
+// ====================================== */
+
+.tag {
+  display: inline-block;
+  padding: 0.4em 0.7em;
+  border-radius: 3px;
+  font-size: 12px;
+  line-height: 1;
+}
+
+.tag + .tag {
+  margin-left: 0.4em;
+}
+
+.tag--discount {
+  border: 1px solid #788795;
+  background-color: #788795;
+  color: white;
+}
+
+.tag--discount::before {
+  content: '- ';
+}
+
+.tag--discount::after {
+  content: '%';
+}
+
+.tag--price {
+  background-color: transparent;
+  border: 1px solid #7b666d;
+}
+
+.tag--price::before {
+  content: '$';
+}
+
+a:hover .tag--price {
+  background-color: #89b100;
+  color: white;
+  border-color: #999;
+}
+
+/* ======================================
+// # Platform icons
+// ====================================== */
+.platform {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+
+  /* red background as placeholder */
+  background-color: red;
+}
+
+/* Icons here as necessary */
+.pc {}
+
+.mac {}
+
+.linux {}
+
+/* ======================================
+// # Panel
+// This is the component that's used on 'game', 'news__item' and 'gamelist__item'. Watch how you can combine so many different things together in the same piece of code.
+// I could have named it 'game', but decided to name it 'panel' for this CSS so you don't confuse this with the 'game' from styles-complete.css
+// ====================================== */
+.panel {
+  display: block;
+  font-size: 13px;
+}
+
+.panel + .panel {
+  border-top: 1px solid #cfcfcf;
+}
+
+.panel > a {
+  background-color: #e1e1e1;
+  color: #262626;
+  text-decoration: none;
+}
+
+.panel > a:hover {
+  background-color: #e5e5e5;
+}
+
+.panel img {
+  display: block;
+  opacity: 0.95;
+}
+
+.panel > a:hover img {
+  opacity: 1;
+}
+
+.panel__title {
+  font-size: 13px;
+  font-weight: 600;
+  flex-basis: 100%;
+}
+
+.panel__text {
+  font-size: 12px;
+}
+
+.panel__subtext {
+  display: inline-block;
+  font-size: 11px;
+  color: #666;
+}
+
+.panel__platforms + .panel__subtext {
+  margin-left: 0.5em;
+}
+
+.panel__subtext > * + *::before {
+  margin-left: 0.25em;
+  margin-right: 0.5em;
+  content: '-';
+}
+
+.panel__info {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 10px 15px 10px;
+}
+
+/* Panel grid only */
+.panel--grid > a {
+  display: flex;
+  flex-flow: column;
+  flex-grow: 1;
+}
+
+.panel--grid .panel__info {
+  flex-grow: 1;
+}
+
+.panel--grid .panel__title {
+  align-self: flex-start;
+}
+
+/* Panel list only */
+.panel--list > a {
+  display: grid;
+  grid-template-columns: 100px 1fr auto;
+  grid-gap: 10px;
+  align-items: center;
+}
+
+.gameslist {
+  counter-reset: panel-title;
+}
+
+.panel--list .panel__title {
+  width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.gameslist .panel--list .panel__title::before {
+  counter-increment: panel-title;
+  content: counter(panel-title) ". ";
+}
+
+.panel--list .panel__platforms {
+  display: inline-block;
+  margin-top: 2px;
+}
+
+.panel--list .panel__tags {
+  padding-right: 15px;
+}
+
+/* Panel headlines only */
+.panel--headlines > a {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+
+}
+.panel--headlines .panel__title {
+
+}
+
+/* Site header */
+.site-header {
+  position: relative;
+  padding-top: 23px;
+  padding-bottom: 20px;
+  background-image: url(../images/header-bg.jpg);
+  background-repeat: repeat-x;
+  background-color: #262626;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* banner */
+.banner-container {
+  margin-top: 20px;
+}
+
+.banner {
+  position: relative;
+  display: block;
+  color: white;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.banner__text {
+  display: inline-block;
+  padding: 25px 30px;
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+.banner__img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* ======================================
+// # Featured games
+// ====================================== */
+
+/* Featured games grid */
+.featured-games {
+  position: relative;
+  margin-top: 40px;
+}
+
+.featured-games::before {
+  position: absolute;
+  top: -150px;
+  right: 0;
+  left: 0;
+  z-index: -10;
+  background-image: url(../images/blur-nex-mach.jpg);
+  background-repeat: no-repeat;
+  height: 800px;
+  content: '';
+}
+
+.fg-grid {
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  grid-gap: 1em;
+}
+
+.fg-grid > * {
+  display: flex;
+  flex-flow: column;
+  grid-column: span 4;
+}
+
+.fg-grid__latest {
+  grid-column: span 15;
+}
+
+.fg-grid__deal {
+  grid-column: span 5;
+}
+
+/* Featured game (The two big ones) */
+.featured-game {
+  position: relative;
+  background-size: cover;
+  color: white;
+  line-height: 1.25;
+  text-decoration: none;
+}
+
+.featured-game--new {
+  /* padding-bottom of 46.25% is added (for first item) to create a large height */
+  height: 0;
+  padding-bottom: 46.25%;
+}
+
+.featured-game--deal {
+  /* Flex grow to allow itself to grow as large as needed, so images can end together */
+  flex-grow: 1;
+}
+
+.featured-game__info {
+  /* To position things at the end */
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 15px;
+}
+
+.featured-game__tags {
+  /* To position things at the end */
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.featured-game .tag {
+  font-size: 16px;
+}
+
+.featured-game__platforms {
+  font-size: 13px;
+  color: #999;
+}
+
+.featured-game {
+  font-size: 20px;
+}
+
+.featured-game__title::before {
+  content: 'Now Available: ';
+}
+
+.featured-game__sale {
+  display: block;
+  font-size: 48px;
+  color: #ffc4a1;
+}
+
+.featured-game__sale-duration {
+  font-size: 14px;
+}
+
+
+/* ======================================
+// # Frontpage bottom
+// ====================================== */
+.frontpage-bottom__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 130px;
+  grid-column-gap: 40px;
+  grid-row-gap: 50px;
+  margin-top: 40px;
+}
+
+.frontpage-bottom__grid > * {
+  grid-column: span 2;
+}
+
+.gog {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.gameslist {
+  grid-column: 2 / span 1;
+  grid-row: 1 / span 2;
+}
+
+.news {
+  grid-column: 1;
+  grid-row: 2 / span 1;
+}
+
+/* GOG */
+.gog {
+  display: flex;
+  flex-flow: column;
+}
+
+.gog__content {
+  display: grid;
+  flex-grow: 1;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 1px;
+  background-color: #606d7a;
+}
+
+.gog__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #788795;
+  color: white;
+}
+
+/* ======================================
+// # Footers
+// ====================================== */
+
+/* First site footer */
+.first-site-footer {
+  margin-top: 80px;
+  border-bottom: 1px solid #373737;
+  background-color: #262626;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.first-site-footer .l-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.first-footer-nav__left a {
+  display: inline-block;
+  font-size: 13px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.first-footer-nav__left a:hover {
+  color: white;
+}
+
+.first-footer-nav__left a + a {
+  margin-left: 25px;
+}
+
+.first-footer-nav__right > div {
+  display: inline-block;
+  font-size: 13px;
+}
+
+.first-footer-nav__right > div + div {
+  margin-left: 2em;
+}
+
+.option-selector > span:first-child {
+  color: #818181;
+}
+
+.option-selector > *:nth-child(2) {
+  margin-left: 0.5em;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+}
+
+/* Sitemap */
+.second-site-footer {
+  background-color: #262626;
+  padding: 30px 0;
+}
+
+.sitemap {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 20px;
+}
+
+.sitemap a {
+  font-size: 12px;
+  display: block;
+  color: #818181;
+  text-decoration: none;
+}
+
+.sitemap__column > a {
+  font-size: 14px;
+  color: white;
+  text-transform: uppercase;
+}
+
+.sitemap__list {
+  margin-top: 15px;
+}
+
+.sitemap__item {
+  display: block;
+  line-height: 1.5;
+}
+
+.sitemap__item + .sitemap__item {
+  margin-top: 3px;
+}
+
+.social {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-gap: 20px;
+}
+
+.social > * {
+  padding: 5px 10px;
+  background-color: #303030;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
+
+.legal {
+  background-color: #1d1d1d;
+}
+
+.legal .l-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.legal__left,
+.legal__right {
+  color: #666;
+  padding: 30px 0;
+}
