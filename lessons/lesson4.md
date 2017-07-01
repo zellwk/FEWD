@@ -2,10 +2,13 @@
 
 ## Responsive CSS
 
-- Making images responsive with `max-width`
+- Making images responsive with `max-width: 100%`
 - Making layout containers responsive  with `max-width`
 - Making grids responsive
   + fr unit
+  + minmax
+- Don't use `height`!
+- Meta viewport
 
 - More on CSS Grid
   + `grid-column` shorthand
@@ -15,21 +18,17 @@
 - Media queries
   + `min-width` media queries
   + `max-width` media queries
-  + Media query reference
+  + [Why use `min-width` queries](https://zellwk.com/blog/how-to-write-mobile-first-css/)
+  + [Media query reference](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries)
 
 - CSS relative units
   + `em`
   + `rem`
-  + `vw`
-  + `vh`
+  + [Rem vs em](https://zellwk.com/blog/rem-vs-em/)
 
 Sites we built:
 - https://www.awwwards.com (Focus on grids)
-- https://medium.com/microsoft-design/designing-windows-mixed-reality-cee984d0c837 (Focus on typography)
 
 ## Homework:
-- Design your portfolio / final project.
-- Complete HTML + CSS portion (+ responsive)
+- https://www.nowness.com
 
-## Extra homework:
-- Take a website you like. Copy it. (Responsive).
