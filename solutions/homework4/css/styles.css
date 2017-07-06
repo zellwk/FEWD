@@ -1,0 +1,754 @@
+:root {
+  --camel: #c9a16e;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-size: 87.5%; /* 17px */
+  /* font-family: 'FuturaPT', sans-serif; */
+  font-family: sans-serif;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+h1, h2, h3, h4, h5, h6, ul, ol, li, p {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* This helps with responsive SVG icons */
+svg {
+  display: block;
+  width: auto;
+  height: auto;
+}
+
+/* ======================================
+// # Typography
+// Nowness has 11 font sizes, way too much for a design to be remain consistent across the page. These are the following sizes:
+8, 10, 13, 14, 17, 18, 19, 20, 21, 25, 43.
+
+Part of being a good Frontend developer is to be a last line of defense against sloppy design. So, you should point these things out to the designer.
+// ====================================== */
+
+a {
+  color: #262626;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--camel);
+}
+
+.link--colored {
+  color: var(--camel);
+}
+
+p + *,
+* + p {
+  margin-top: 1em;
+}
+
+.t-small {
+  font-size: 0.8em;
+}
+
+/* ======================================
+// # Wraps
+// Nowness has three different alignment patterns:
+// 1. Only some padding at the sides of the viewport
+// 2. Alignment to a wrapper (as seen from the fixed header)
+// 3. Alignment slightly outside of the wrapper
+
+You should also point out these inconsistencies. In this version, I took the liberty to remove the third aligment.
+// ====================================== */
+.l-wrap {
+  max-width: 90em; /* 1320px + 2em */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.l-outer-wrap {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* ======================================
+// # Common Layout patterns
+// NOWNESS uses a few common layout patters. You can use generic, understandable names for these patterns to share them across different parts of your code.
+// ====================================== */
+
+.l-two > *:nth-child(2) {
+  margin-top: 2em;
+}
+
+@media all and (min-width: 800px) {
+  .l-two {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .l-two > *:nth-child(2) {
+    margin-top: 0;
+  }
+}
+
+.l-two--split {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.l-two--split > *:nth-child(2) {
+  margin-top: 4em;
+}
+
+@media all and (min-width: 800px) {
+  .l-two--split {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .l-two--split > * {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+  }
+
+  .l-two--split > *:nth-child(2) {
+    margin-top: 0;
+    border-left: 1px solid black;
+  }
+}
+
+.l-two--split > * > * {
+  max-width: 32em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.l-three {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1.5em;
+}
+
+@media all and (min-width: 600px) {
+  .l-three {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.l-four {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1.5em;
+}
+
+@media all and (min-width: 600px) {
+  .l-four {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media all and (min-width: 1000px) {
+  .l-four {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ======================================
+// # Button
+// ====================================== */
+.btn {
+  position: relative;
+  display: inline-block;
+  padding: 1em 3em;
+  border: 1px solid black;
+  font-size: 0.85em;
+  line-height: 1;
+  text-transform: uppercase;
+  transition: color 0.15s ease-in-out;
+  overflow: hidden;
+}
+
+.btn::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  background-color: black;
+  transform: translateY(100%);
+  transition: transform 0.15s ease-in-out;
+  content: '';
+}
+
+.btn:hover::after {
+  transform: translateY(0);
+}
+
+/* ======================================
+// # Section
+// ====================================== */
+
+.section {
+  padding-top: 4em;
+  padding-bottom: 4em;
+  border-top: 1px solid var(--camel);
+}
+
+.section__title {
+  margin-bottom: 2.5rem;
+  font-size: 1.75em;
+  line-height: 1.25;
+  font-weight: 300;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.section__subtitle {
+  font-size: 1.25em;
+  margin-bottom: 2.5rem;
+  font-weight: 300;
+  text-align: center;
+}
+
+.section--flat {
+  padding-bottom: 0;
+}
+
+.section--split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  padding: 0;
+}
+
+.section--split > * {
+  display: flex;
+  justify-content: center;
+  padding: 4em 2em;
+}
+
+.section--split > * + * {
+  border-left: 1px solid var(--camel);
+}
+
+.nowness {
+  font-size: 1.75em;
+  line-height: 1;
+  font-weight: 200;
+  text-transform: uppercase;
+}
+
+/* ======================================
+// # Site-header
+// ====================================== */
+.site-header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.site-header + * > .section {
+  padding-top: 6.5em; /* Kind of calculated manually */
+  border-top: 0;
+}
+
+.menu svg {
+  height: 2em;
+}
+
+/* ======================================
+// # Navigation
+// ====================================== */
+
+.l-main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-nav {
+  border-bottom: 1px solid #ddd;
+  background-color: white;
+}
+
+.main-nav__toolbar {
+  display: flex;
+  align-items: center;
+}
+
+.toolbar__link {
+  position: relative;
+  padding: 1em 0.25em;
+  transition: color 0.15s ease-out;
+}
+
+.toolbar__link + .toolbar__link {
+  margin-left: 2em;
+}
+
+.toolbar__link::after {
+  content: '';
+  position: absolute;
+  display: block;
+  bottom: 0;
+  left: 3em;
+  right: 3em;
+  height: 1px;
+  background-color: black;
+  transition: left 0.15s ease-out, right 0.15s ease-out;
+}
+
+.toolbar__link:hover::after {
+  left: 0;
+  right: 0;
+}
+
+.toolbar__link svg {
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.toolbar__link .i-login {
+  height: 1.5em;
+}
+
+.secondary-nav {
+  border-bottom: 1px solid #ddd;
+  background-color: white;
+  font-size: 0.8em;
+  line-height: 2.5rem;
+  text-transform: uppercase;
+}
+
+.l-secondary-nav {
+  text-align: center;
+}
+
+.l-secondary-nav > * + * {
+  margin-left: 3em;
+}
+
+/* ======================================
+// # Featured videos at the top
+// ====================================== */
+
+.l-top-videos {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1.75em;
+}
+
+@media all and (min-width: 600px) {
+  .l-top-videos {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .l-top-videos > *:first-child {
+    grid-column: span 2;
+  }
+}
+
+/* ======================================
+// # Secondary videos
+// ====================================== */
+
+.l-secondary-videos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1.5em;
+}
+
+@media screen and (min-width: 600px) {
+  .l-secondary-videos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .l-secondary-videos {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.l-secondary-videos > * {
+  display: block;
+}
+
+/* ======================================
+// # TV component (Top video)
+// ====================================== */
+.tv {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  color: white;
+}
+
+.tv:hover,
+.tv:active {
+  color: white;
+}
+
+.tv__image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -10;
+  background-size: cover;
+  background-position: center;
+}
+
+.tv__image::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: black;
+  opacity: 0.2;
+  content: '';
+}
+
+.tv__info {
+  max-width: 25em;
+  padding-top: 10em;
+  padding-bottom: 3em;
+  text-align: center;
+}
+
+@media all and (min-width: 1000px) {
+  .tv__info {
+    padding-top: 15em;
+  }
+}
+
+.tv__title {
+  font-size: 1.5em;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+@media all and (min-width: 1000px) {
+  .tv__title {
+    font-size: 2.5em;
+  }
+}
+
+.tv__desc {
+  font-weight: 200;
+}
+
+.tv--secondary .tv__title {
+  font-size: 1.2em;
+}
+
+@media all and (min-width: 1000px) {
+  .tv--secondary .tv__title {
+    font-size: 2em;
+  }
+}
+
+.tv--single .tv__info {
+  padding-top: 10em;
+  padding-bottom: 10em;
+}
+
+/* ======================================
+// # Media component
+// ====================================== */
+.media {
+  position: relative;
+  overflow: hidden;
+}
+
+.media > a {
+  display: block;
+}
+
+.media__img {
+  display: block;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.media:hover .media__img {
+  opacity: 0.75;
+}
+
+.media__duration {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 0.8em;
+  padding: 0.25em 0.5em;
+  background-color: black;
+  color: white;
+}
+
+.media__cta {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 10;
+  transform: translateY(100%);
+  transition: transform 0.1s ease-in-out;
+}
+
+.media:hover .media__cta {
+  transform: translateY(0);
+}
+
+.media__icon {
+  display: block;
+
+  /* Alternatively, can use width + height here */
+  padding: 0.75em 1em;
+  background-color: #dbdada;
+}
+
+.media__icon:hover,
+.media__icon:active {
+  background-color: white;
+}
+
+.media--collection .media__info {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 0.25em 0.5em;
+  background-color: black;
+  color: white;
+  font-size: 0.6em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.media--collection:hover .media__img {
+  opacity: 1;
+}
+
+/* ======================================
+// # Story component
+// ====================================== */
+.story {
+  display: block;
+}
+
+.story a {
+  text-decoration: none;
+}
+
+.story__title {
+  font-size: 1.2em;
+  margin-top: 1rem;
+  font-weight: 400;
+}
+
+.story__title + * {
+  margin-top: 1rem;
+}
+
+.story__title > a:hover {
+  color: #777;
+}
+
+.story--small,
+.story--featured {
+  text-align: center;
+}
+
+.story--small .story__date {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.75em;
+  font-weight: 300;
+}
+
+.story--small .story__title {
+  margin-top: 0.5rem;
+  font-size: 0.8em;
+  font-weight: 300;
+}
+
+.story--featured .story__title {
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+.story--featured .story__title {
+  margin-top: 1.25rem;
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+.story--featured .story__title + * {
+  margin-top: 0.5em;
+}
+
+.story--collection {
+  max-width: 17.5em;
+  margin: auto;
+}
+
+.story--collection .story__title {
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+.story--collection .story__title + * {
+  margin-top: 0;
+}
+
+/* ======================================
+// # Most loved / most watched
+// ====================================== */
+.most {
+  max-width: 30em;
+}
+
+/* ======================================
+// # Artsnap component (Article snapshot)
+// ====================================== */
+.artsnap {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media all and (min-width: 70em) {
+  .artsnap {
+    grid-template-columns: 10em 1fr;
+  }
+}
+
+.artsnap__img {
+  max-width: 10em;
+}
+
+.artsnap__info {
+  padding-top: 1.5em;
+}
+
+@media all and (min-width: 70em) {
+  .artsnap__info {
+    padding-left: 3em;
+    padding-right: 3em;
+  }
+}
+
+.artsnap__title {
+  font-size: 1.2em;
+  font-weight: 200;
+}
+
+.artsnap__title + * {
+  margin-top: 0.5em;
+}
+
+@media all and (min-width: 70em) {
+  .artsnap__title + * {
+    margin-top: 1em;
+  }
+}
+
+/* ======================================
+// # Social media
+// ====================================== */
+.l-sm-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 50em;
+  margin-top: -3em;
+}
+
+.l-sm-grid > * > a {
+  padding: 3em;
+}
+
+.l-sm-row {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  max-width: 50em;
+  margin: auto;
+}
+
+.sm-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+  align-items: center;
+}
+
+.sm-block p:first-child {
+  font-size: 1.25em;
+}
+
+.sm-icon {
+  display: flex;
+  justify-content: center;
+}
+
+.sm-icon svg {
+  width: 1.5em;
+  height: 1.5em;
+}
+
+/* ======================================
+// # Footer
+// ====================================== */
+.l-footer-nav {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.l-footer-nav > * {
+  display: inline-block;
+  flex-basis: 100%;
+  margin: 1em 0;
+  text-align: center;
+}
+
+@media all and (min-width: 600px) {
+  .l-footer-nav > * {
+    flex-basis: auto;
+    margin: 0.5em 0;
+    text-align: left;
+  }
+
+  .l-footer-nav > * + * {
+    margin-left: 2em;
+  }
+}
+
+.footer-link {
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+/* ======================================
+// # Utility classes (with !importants)
+// ====================================== */
+.u-text-center {
+  text-align: center !important;
+}
