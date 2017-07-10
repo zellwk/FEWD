@@ -87,7 +87,7 @@ function scissorsPaperStone(p1, p2) {
 ### Readings to solidify what you learned last lesson:
 
 1. [Variable declaration with `const` and `let`](https://zellwk.com/blog/es6/#let-and-const) (just `const` and `let` will do).
-2. `if` statements
+2. [`if` statements](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else)
 3. [`for` loops](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Looping_code) (Just the for loop part will do)
 4. [Functions](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Functions)
 
