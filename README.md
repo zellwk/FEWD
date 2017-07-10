@@ -14,5 +14,3 @@
 1. I'm available on Monday and Thursdays on Slack, usually 2-6pm.
 2. Just ping me and I'll get back asap.
 3. I'll also review your code and send you feedback before the next lesson.
-
-123
