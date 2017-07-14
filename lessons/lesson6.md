@@ -41,3 +41,9 @@
 ## Homework
 
 - Make an accordion with JavaScript. Example: [Bootstrap accordion](https://v4-alpha.getbootstrap.com/components/collapse/#accordion-example). (Note: don't use Bootstrap. This example is here to show you what it looks like)
+
+### Readings:
+
+1. [Event Bubbling and capturing](https://www.sitepoint.com/event-bubbling-javascript/)
+2. [Selecting multiple elements with `document.querySelectorAll`](https://zellwk.com/blog/js-in-dom/)
+3. [Basic Form elements](http://htmldog.com/guides/html/beginner/forms/)
