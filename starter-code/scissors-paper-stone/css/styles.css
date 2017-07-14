@@ -1,0 +1,78 @@
+body {
+  margin: 0;
+  font-size: 2vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h2 {
+  text-align: center;
+  font-size: 3vw;
+  margin: 0;
+  margin-bottom: 1em;
+}
+
+p {
+  margin: 0;
+}
+
+.l-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 3em;
+  grid-row-gap: 1em;
+  align-items: center;
+  margin: auto;
+}
+
+.l-wrap > *:nth-child(n+3) {
+  grid-column: span 2;
+  text-align: center;
+}
+
+.button {
+  display: inline-block;
+  border: 2px solid black;
+  padding: 0.5em 1.5em;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+}
+
+.button + .button {
+  margin-top: 0.5em;
+}
+
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+[data-choice] {
+  display: flex;
+  align-items: center;
+}
+
+[data-choice]::before {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  background-size: cover;
+  content: '';
+  margin-right: 0.5em;
+}
+
+[data-choice="scissors"]::before {
+  background-image: url("../images/scissors.svg");
+}
+
+[data-choice="paper"]::before {
+  background-image: url("../images/paper.svg");
+}
+
+[data-choice="stone"]::before {
+  background-image: url("../images/stone.svg");
+
+}
