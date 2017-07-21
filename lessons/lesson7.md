@@ -16,9 +16,13 @@
 
 - `node.matches('selector')` – check if element would be selected with the specified selector.
 - `node.closest('selector')` – searches for the closest ancestor element for the specified selector.
-- `document.querySelectorAll('selector')` - selects multiple nodes
+- `node.querySelectorAll('selector')` - selects multiple nodes
   + Results from `document.querySelectorAll` is a `NodeList`. Need to perform a `for` loop over nodes within it before you can `node.addEventListener` or any other method learned last lesson
   + Alternatively, you can use `nodeList.forEach()` (Similar to `array.forEach`) to loop through nodes. Easier.
+- `node.parentNode` - selects parent node
+- `node.nextSibling` - select next sibling node
+- `node.prevSibling` - select prev sibling node
+- `node.children` – selects all children nodes (as a NodeList)
 
 ## Events
 
