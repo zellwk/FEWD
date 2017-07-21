@@ -16,7 +16,6 @@
   + `node.dataset.attributeName`
 
 ## Events
-
 - Event = things that happen.
   + User clicks mouse
   + User types a key

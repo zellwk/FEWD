@@ -1,0 +1,61 @@
+body {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+h1, h2, h3, h4, h5, h6, ul, ol, p {
+  margin: 0;
+}
+
+p + p {
+  margin-top: 1em;
+}
+
+.l-wrap {
+  max-width: 30em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5em;
+}
+
+.accordion {
+  border: 1px solid #ccc;
+}
+
+.accordion + .accordion {
+  border-top: 0;
+}
+
+.accordion__title {
+  font-size: 1.2em;
+  display: block;
+  color: #333;
+  text-decoration: none;
+  padding: 1rem;
+  border-bottom: 1px solid #ccc;
+  background-color: #eee;
+}
+
+.accordion__content {
+  overflow: hidden;
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    height 0.3s ease-in,
+    opacity 0.3s ease-in,
+    visibility 0s 0.3s linear;
+}
+
+.accordion.is-shown .accordion__content {
+  height: auto;
+  visibility: visible;
+  opacity: 1;
+  transition:
+    height 0.3s ease-out,
+    opacity 0.3s ease-out;
+}
+
+.accordion__inner {
+  padding: 1rem 1rem;
+}
