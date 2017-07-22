@@ -47,7 +47,10 @@
 ## What we built:
 
 1. Accordion (Last week's homework)
-2. Changing background while scrolling
-3. Responsive navigation menu
-4. Modal window
+2. Responsive navigation menu
+3. Modal window
+4. Changing background while scrolling
 5. Add list item
+
+## Homework
+https://github.com/wdi-sg/fellowship-of-the-dom
