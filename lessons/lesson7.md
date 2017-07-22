@@ -11,6 +11,8 @@
 - Event delegation: The act of using a parent element to listen for events for children elements.
 - `event.preventDefault()` – prevents default event behavior
 - `event.stopPropagation()` – prevents events from bubbling further.
+- `event.target`
+- `event.currentTarget`
 
 ## More selectors
 
