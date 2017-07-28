@@ -1,0 +1,33 @@
+body {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding-top: 5em;
+  font-size: 150%;
+}
+
+ul, ol, li, p {
+  margin: 0;
+}
+
+input {
+  font-size: inherit;
+  padding: 0.5em 0.75em;
+}
+
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 0.5em 0.75em;
+  border: 0;
+  background-color: #1ce;
+  color: #262626;
+  font-size: inherit;
+}
+
+.list {
+  margin-top: 3em;
+}
